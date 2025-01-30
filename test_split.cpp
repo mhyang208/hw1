@@ -10,6 +10,7 @@ g++ split.cpp test_split.cpp -o test_split
 */
 
 #include <iostream>
+#include <string>
 
 #include "split.h"
 
