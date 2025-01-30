@@ -21,30 +21,15 @@ void split(Node*& in, Node*& odds, Node*& evens)
 
   // remember recursion means calling the function again with a smaller section of the list
   // need to delete the pointer of the Node we've already processed
-  // PROBLEM: if we just push_front to odds and evens, these lists will be reverse sorted
-    // could push to end but would need to iterate to end of list every time...
-    // can't use a loop either so maybe not
-    // well maybe can recursively find end of list...
-    // or reverse the two new lists afterward
 
   // check if in is null to avoid segfaults
   if (in != nullptr) {
     // sort the given Node
     if (in -> value % 2 == 0) {
-        if (evens == nullptr) {
-          evens = new Node{in->value, nullptr};
-        }
-        else {
-          evens = new Node{in->value, evens};
-        }
+      evens = new Node{in->value, evens};
     }
     else {
-      if (odds == nullptr) {
-          odds = new Node{in->value, nullptr};
-        }
-        else {
-          odds = new Node{in->value, odds};
-        }
+      odds = new Node{in->value, odds};
     }
 
     // skips this if it's the base case (end of list)
