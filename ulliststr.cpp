@@ -29,27 +29,17 @@ size_t ULListStr::size() const
 // WRITE YOUR CODE HERE
 
 std::string* ULListStr::getValAtLoc(size_t loc) const {
-
-  // std::cout << "called" << std::endl;
-  // std::cout << loc << std::endl;
-
+  // hell on earth
 
   // check if loc is within size
   if (loc >= size_) {
-    // std::cout << "bad loc" << std::endl;
     return nullptr;
   }
   else {
 
-    // std::cout << "else" << std::endl;
-
     // every Item has an array of 10
     Item* p = head_;
-    // std::cout << "next_check" << std::endl;
-    // std::cout << (p->next == nullptr) << std::endl;
-    // std::cout << p->first << std::endl;
-    // std::cout << ((loc + p->first) / 10) << std::endl;
-  
+    
     // placeholder location to edit as we progress
     size_t location;
 
@@ -61,19 +51,19 @@ std::string* ULListStr::getValAtLoc(size_t loc) const {
     // find "index" of element we want within that Item (accounting for the shift from head_->first)
     location = (loc + head_->first) % 10;
 
-    std::cout << "Head: " << (head_->next == nullptr) << std::endl;
+    // std::cout << "Head: " << (head_->next == nullptr) << std::endl;
 
-    std::cout << "Loc: " << loc << std::endl;
-    std::cout << "First: " << head_->first << std::endl;
-    std::cout << "Location: " << location << std::endl;
+    // std::cout << "Loc: " << loc << std::endl;
+    // std::cout << "First: " << head_->first << std::endl;
+    // std::cout << "Location: " << location << std::endl;
 
     // return that element
-    std::cout << "Value: " << p->val[location] << std::endl;
-    std::cout << "Return" << std::endl;
+    // std::cout << "Value: " << p->val[location] << std::endl;
+    // std::cout << "Return" << std::endl;
     return &(p->val[location]);
 
 
-
+    // evidence of my suffering -->
     // go to the correct Item
     // NOTE:: need to account for if the very first node of the overall list doesn't start from the top
     // for (size_t i = 0; i < (loc / 10); i++) {
